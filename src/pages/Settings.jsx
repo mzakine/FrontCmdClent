@@ -930,8 +930,8 @@ export default function Settings() {
         {/* Modal Form for Creating / Editing User */}
         {userFormOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
-            <div className="bg-white rounded-3xl border border-outline-variant/30 custom-shadow w-full max-w-md overflow-hidden">
-              <div className="px-6 py-4 bg-surface-container-low border-b border-outline-variant/20 flex items-center justify-between">
+            <div className="bg-white rounded-3xl border border-outline-variant/30 custom-shadow w-full max-w-md max-h-[90vh] flex flex-col overflow-hidden">
+              <div className="px-6 py-4 bg-surface-container-low border-b border-outline-variant/20 flex items-center justify-between flex-shrink-0">
                 <h3 className="text-[17px] font-bold text-primary">
                   {editingUser ? `Modifier l'utilisateur` : 'Créer un compte client'}
                 </h3>
@@ -943,7 +943,7 @@ export default function Settings() {
                 </button>
               </div>
 
-              <form onSubmit={handleSaveUser} className="p-6 space-y-4 text-left">
+              <form onSubmit={handleSaveUser} className="p-6 space-y-4 text-left overflow-y-auto flex-1">
                 {userFormSuccess && (
                   <div className="p-3 bg-success-emerald/10 text-success-emerald rounded-xl text-[13px] font-semibold flex items-center gap-1.5">
                     <span className="material-symbols-outlined text-[18px]">check_circle</span>
