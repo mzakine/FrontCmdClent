@@ -513,7 +513,7 @@ export default function ImportExcel() {
                                   <div className="text-[10px] text-outline">{item.category}</div>
                                 </td>
                                 <td className="py-3.5 px-4 text-center font-bold text-secondary">
-                                  {item.proPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                                  {item.proPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                                 </td>
                                 <td className="py-3.5 px-4 text-center">
                                   <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
@@ -569,11 +569,11 @@ export default function ImportExcel() {
                     <div className="pt-4 border-t border-outline-variant/20 space-y-3">
                       <div className="flex justify-between font-medium">
                         <span className="text-on-surface-variant">Sous-total HT</span>
-                        <span className="text-primary">{totalHT.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</span>
+                        <span className="text-primary">{totalHT.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</span>
                       </div>
                       <div className="flex justify-between font-medium">
                         <span className="text-on-surface-variant">TVA (20%)</span>
-                        <span className="text-primary">{tva.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</span>
+                        <span className="text-primary">{tva.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</span>
                       </div>
                       
                       <div className="pt-3 border-t border-outline-variant/20 flex justify-between items-end">
@@ -582,7 +582,7 @@ export default function ImportExcel() {
                           <p className="text-[10px] text-outline italic">Validé pour {selectedClient ? selectedClient.ref : 'SAGE'}</p>
                         </div>
                         <p className="text-[22px] font-black text-secondary">
-                          {totalTTC.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                          {totalTTC.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                         </p>
                       </div>
                     </div>

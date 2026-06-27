@@ -635,7 +635,7 @@ export default function ImportDocument() {
                                       <option value="" disabled>Sélectionner une alternative...</option>
                                       {ligne.alternatives.map((alt, aIdx) => (
                                         <option key={aIdx} value={alt.reference}>
-                                          {alt.designationOfficielle} ({alt.reference}) — {(alt.tarifUnitaire).toFixed(2)} €
+                                          {alt.designationOfficielle} ({alt.reference}) — {(alt.tarifUnitaire).toFixed(2)} Dhs
                                         </option>
                                       ))}
                                     </select>
@@ -669,7 +669,7 @@ export default function ImportDocument() {
                                           className="w-full text-left px-3 py-2 hover:bg-slate-50 rounded-lg flex flex-col transition-all text-[12px]"
                                         >
                                           <span className="font-bold text-primary">{art.designation_officielle}</span>
-                                          <span className="text-[10px] text-outline">Ref: {art.reference} • {art.tarif_unitaire.toFixed(2)} € • Stock: {art.stockQuantity}</span>
+                                          <span className="text-[10px] text-outline">Ref: {art.reference} • {art.tarif_unitaire.toFixed(2)} Dhs • Stock: {art.stockQuantity}</span>
                                         </button>
                                       ))}
                                     </div>
@@ -698,9 +698,9 @@ export default function ImportDocument() {
                           <td className="py-4 px-4 text-center font-bold text-slate-700">
                             {ligne.articleSage ? (
                               <>
-                                <p>{ligne.articleSage.tarifUnitaire.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</p>
+                                <p>{ligne.articleSage.tarifUnitaire.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</p>
                                 <p className="text-[10px] text-outline font-normal">
-                                  Total: {(ligne.articleSage.tarifUnitaire * ligne.quantite).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                                  Total: {(ligne.articleSage.tarifUnitaire * ligne.quantite).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                                 </p>
                               </>
                             ) : (
@@ -790,10 +790,10 @@ export default function ImportDocument() {
                       
                       <div className="text-right">
                         <p className="text-[14px] font-black text-primary">
-                          {ligne.quantite} × {ligne.articleSage.tarifUnitaire.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                          {ligne.quantite} × {ligne.articleSage.tarifUnitaire.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                         </p>
                         <p className="text-[12px] text-secondary font-bold">
-                          {(ligne.quantite * ligne.articleSage.tarifUnitaire).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                          {(ligne.quantite * ligne.articleSage.tarifUnitaire).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                         </p>
                       </div>
                     </li>
@@ -854,11 +854,11 @@ export default function ImportDocument() {
                 <div className="space-y-3 text-[14px]">
                   <div className="flex justify-between font-semibold">
                     <span className="text-on-surface-variant">Sous-total HT</span>
-                    <span className="text-primary">{totalHT.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</span>
+                    <span className="text-primary">{totalHT.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</span>
                   </div>
                   <div className="flex justify-between font-semibold">
                     <span className="text-on-surface-variant">TVA (20%)</span>
-                    <span className="text-primary">{tva.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</span>
+                    <span className="text-primary">{tva.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</span>
                   </div>
                   <div className="pt-3 border-t border-outline-variant/20 flex justify-between items-end">
                     <div>
@@ -866,7 +866,7 @@ export default function ImportDocument() {
                       <p className="text-[9px] text-outline italic">Livraison estimée sous 48h</p>
                     </div>
                     <p className="text-[22px] font-black text-secondary">
-                      {totalTTC.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                      {totalTTC.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                     </p>
                   </div>
                 </div>
@@ -998,8 +998,8 @@ export default function ImportDocument() {
                   <td className="p-2 border font-mono">{l.articleSage.reference}</td>
                   <td className="p-2 border">{l.articleSage.designationOfficielle}</td>
                   <td className="p-2 border text-center">{l.quantite}</td>
-                  <td className="p-2 border text-right">{l.articleSage.tarifUnitaire.toFixed(2)} €</td>
-                  <td className="p-2 border text-right">{(l.articleSage.tarifUnitaire * l.quantite).toFixed(2)} €</td>
+                  <td className="p-2 border text-right">{l.articleSage.tarifUnitaire.toFixed(2)} Dhs</td>
+                  <td className="p-2 border text-right">{(l.articleSage.tarifUnitaire * l.quantite).toFixed(2)} Dhs</td>
                 </tr>
               ))}
             </tbody>
@@ -1010,15 +1010,15 @@ export default function ImportDocument() {
           <div className="w-64 space-y-1.5 border p-4 bg-gray-50 rounded">
             <div className="flex justify-between font-semibold">
               <span>Total HT :</span>
-              <span>{totalHT.toFixed(2)} €</span>
+              <span>{totalHT.toFixed(2)} Dhs</span>
             </div>
             <div className="flex justify-between font-semibold">
               <span>TVA (20%) :</span>
-              <span>{tva.toFixed(2)} €</span>
+              <span>{tva.toFixed(2)} Dhs</span>
             </div>
             <div className="flex justify-between font-bold border-t pt-1.5 text-[14px]">
               <span>TOTAL TTC :</span>
-              <span>{totalTTC.toFixed(2)} €</span>
+              <span>{totalTTC.toFixed(2)} Dhs</span>
             </div>
           </div>
         </div>

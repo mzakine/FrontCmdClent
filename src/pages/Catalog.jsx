@@ -566,11 +566,11 @@ export default function Catalog() {
                         <td className="px-6 py-4">
                           <div className="flex flex-col">
                             <span className="text-[15px] font-extrabold text-primary">
-                              {price.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                              {price.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                             </span>
                             {hasDiscount && (
                               <span className="text-[10px] text-outline line-through">
-                                {product.publicPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                                {product.publicPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                               </span>
                             )}
                           </div>
@@ -671,11 +671,11 @@ export default function Catalog() {
 
                       <div className="text-right">
                         <span className="text-[15px] font-extrabold text-primary">
-                          {price.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                          {price.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                         </span>
                         {hasDiscount && (
                           <span className="text-[10px] text-outline line-through block">
-                            {product.publicPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                            {product.publicPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                           </span>
                         )}
                       </div>
@@ -780,7 +780,7 @@ export default function Catalog() {
                         <div className="flex items-baseline justify-between">
                           <span className="text-[11px] text-outline font-medium">Prix Public:</span>
                           <span className="text-[11px] text-outline line-through font-medium">
-                            {product.publicPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                            {product.publicPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                           </span>
                         </div>
                       )}
@@ -789,7 +789,7 @@ export default function Catalog() {
                           {isPro ? 'Prix Pro (SAGE):' : 'Prix Vente:'}
                         </span>
                         <span className="text-[19px] font-extrabold text-primary">
-                          {price.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} € {isPro ? 'HT' : 'TTC'}
+                          {price.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs {isPro ? 'HT' : 'TTC'}
                         </span>
                       </div>
                     </div>
@@ -1055,7 +1055,7 @@ export default function Catalog() {
                             {isProPricing ? 'Tarif Professionnel HT' : 'Tarif Vente Public HT'}
                           </span>
                           <span className="text-2xl font-black text-primary">
-                            {finalPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                            {finalPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                           </span>
                         </div>
                         {hasDiscount && (
@@ -1063,7 +1063,7 @@ export default function Catalog() {
                             <span className="text-outline font-medium">Prix Public Conseillé:</span>
                             <div className="flex items-center gap-2">
                               <span className="line-through text-outline">
-                                {activeStockProduct.publicPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                                {activeStockProduct.publicPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                               </span>
                               <span className="px-2 py-0.5 rounded-md bg-secondary/15 text-secondary text-[10px] font-black">
                                 Prix Négocié
@@ -1203,7 +1203,7 @@ export default function Catalog() {
           <div className="fixed bottom-20 left-4 right-4 lg:hidden bg-sage-blue-gradient-start text-white p-4 rounded-3xl shadow-2xl flex items-center justify-between z-40 border border-white/10">
             <div className="text-left">
               <p className="text-[10px] text-on-primary-container uppercase font-bold tracking-widest">Panier Actuel</p>
-              <p className="text-[20px] font-bold">{getCartTotal().toLocaleString('fr-FR', { minimumFractionDigits: 2 })} € HT</p>
+              <p className="text-[20px] font-bold">{getCartTotal().toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs HT</p>
             </div>
             <button 
               onClick={() => navigate('/cart')}

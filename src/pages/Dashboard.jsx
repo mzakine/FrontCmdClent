@@ -411,7 +411,7 @@ export default function Dashboard() {
             <div className="space-y-1">
               <p className="text-on-surface-variant text-[13px] font-semibold mb-1 uppercase tracking-wider">Chiffre d'Affaires Net</p>
               <h3 className="text-[24px] font-black text-primary">
-                {primary.totalSales.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                {primary.totalSales.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
               </h3>
               {compareMode && comparison && (
                 <div className="flex flex-col gap-0.5 mt-2">
@@ -428,7 +428,7 @@ export default function Dashboard() {
                     )}
                     <span className="text-outline text-[11px]">vs période précédente</span>
                   </div>
-                  <span className="text-[11px] text-outline italic">({comparison.totalSales.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €)</span>
+                  <span className="text-[11px] text-outline italic">({comparison.totalSales.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs)</span>
                 </div>
               )}
             </div>
@@ -473,7 +473,7 @@ export default function Dashboard() {
             <div className="space-y-1">
               <p className="text-on-surface-variant text-[13px] font-semibold mb-1 uppercase tracking-wider">Panier Moyen</p>
               <h3 className="text-[24px] font-black text-tertiary">
-                {primary.avgBasket.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                {primary.avgBasket.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
               </h3>
               {compareMode && comparison && (
                 <div className="flex flex-col gap-0.5 mt-2">
@@ -490,7 +490,7 @@ export default function Dashboard() {
                     )}
                     <span className="text-outline text-[11px]">vs période précédente</span>
                   </div>
-                  <span className="text-[11px] text-outline italic">({comparison.avgBasket.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €)</span>
+                  <span className="text-[11px] text-outline italic">({comparison.avgBasket.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs)</span>
                 </div>
               )}
             </div>
@@ -656,7 +656,7 @@ export default function Dashboard() {
                     <div key={client.name} className="space-y-1.5">
                       <div className="flex justify-between items-center text-[13px] font-semibold">
                         <span className="text-on-surface truncate pr-4">{i + 1}. {client.name}</span>
-                        <span className="text-primary font-bold">{client.amount.toLocaleString('fr-FR')} €</span>
+                        <span className="text-primary font-bold">{client.amount.toLocaleString('fr-FR')} Dhs</span>
                       </div>
                       <div className="w-full h-3 bg-surface-container rounded-full overflow-hidden">
                         <div
@@ -704,7 +704,7 @@ export default function Dashboard() {
                             <span className="font-bold text-on-surface">{com.name}</span>
                           </td>
                           <td className="py-3 text-center text-outline">{com.count}</td>
-                          <td className="py-3 text-right text-primary font-bold">{com.amount.toLocaleString('fr-FR')} €</td>
+                          <td className="py-3 text-right text-primary font-bold">{com.amount.toLocaleString('fr-FR')} Dhs</td>
                         </tr>
                       );
                     })
@@ -827,7 +827,7 @@ export default function Dashboard() {
           <div className="bg-white p-6 rounded-[24px] custom-shadow border border-outline-variant/30 flex items-center justify-between group hover:-translate-y-1 transition-all duration-300">
             <div>
               <p className="text-on-surface-variant text-[14px] font-medium mb-1">Valeur du Panier</p>
-              <h3 className="text-[24px] font-bold">{getCartTotal().toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</h3>
+              <h3 className="text-[24px] font-bold">{getCartTotal().toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</h3>
               <span className="text-secondary text-[14px] font-semibold flex items-center gap-1 mt-2 cursor-pointer hover:underline" onClick={() => navigate('/cart')}>
                 <span className="material-symbols-outlined text-[16px]">arrow_forward</span> Finaliser maintenant
               </span>
@@ -911,7 +911,7 @@ export default function Dashboard() {
                             </span>
                           </td>
                           <td className="px-6 py-5 font-bold text-primary">
-                            {order.totalAmount.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                            {order.totalAmount.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                           </td>
                           <td className="px-6 py-5 text-right" onClick={(e) => e.stopPropagation()}>
                             <button 
@@ -1096,7 +1096,7 @@ export default function Dashboard() {
                         <strong className="text-primary font-extrabold">{order.orderLines?.length || 0}</strong> article(s)
                       </span>
                       <span className="font-extrabold text-secondary text-[15px]">
-                        {order.totalAmount.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                        {order.totalAmount.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                       </span>
                     </div>
                   </div>
@@ -1205,11 +1205,11 @@ export default function Dashboard() {
                           <p className="font-bold text-primary text-[13px]">{line.productName || "Article sans désignation"}</p>
                           <p className="text-[11px] text-outline font-semibold uppercase tracking-wider">{line.productRef}</p>
                           <p className="text-[12px] text-on-surface-variant">
-                            {line.quantity} x {line.unitPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                            {line.quantity} x {line.unitPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                           </p>
                         </div>
                         <div className="text-right font-extrabold text-primary text-[14px] pt-1">
-                          {(line.quantity * line.unitPrice).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                          {(line.quantity * line.unitPrice).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                         </div>
                       </div>
                     ))
@@ -1220,15 +1220,15 @@ export default function Dashboard() {
                 <div className="p-5 bg-surface-container-low border-t border-outline-variant/30 text-[13px] space-y-2">
                   <div className="flex justify-between text-on-surface-variant">
                     <span>Montant HT</span>
-                    <span className="font-bold">{selectedOrderDetail.totalAmount.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</span>
+                    <span className="font-bold">{selectedOrderDetail.totalAmount.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</span>
                   </div>
                   <div className="flex justify-between text-on-surface-variant">
                     <span>TVA (20%)</span>
-                    <span className="font-bold">{(selectedOrderDetail.totalAmount * 0.2).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</span>
+                    <span className="font-bold">{(selectedOrderDetail.totalAmount * 0.2).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</span>
                   </div>
                   <div className="flex justify-between text-primary font-extrabold text-[15px] border-t border-outline-variant/20 pt-2">
                     <span>Total TTC</span>
-                    <span>{(selectedOrderDetail.totalAmount * 1.2).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</span>
+                    <span>{(selectedOrderDetail.totalAmount * 1.2).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</span>
                   </div>
               </div>
             </div>
@@ -1286,8 +1286,8 @@ export default function Dashboard() {
                   <td className="p-3 border border-slate-300 font-bold font-mono">{line.productRef}</td>
                   <td className="p-3 border border-slate-300 font-medium">{line.productName || "Article sans désignation"}</td>
                   <td className="p-3 border border-slate-300 text-center font-bold">{line.quantity}</td>
-                  <td className="p-3 border border-slate-300 text-right">{line.unitPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</td>
-                  <td className="p-3 border border-slate-300 text-right font-bold">{(line.quantity * line.unitPrice).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</td>
+                  <td className="p-3 border border-slate-300 text-right">{line.unitPrice.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</td>
+                  <td className="p-3 border border-slate-300 text-right font-bold">{(line.quantity * line.unitPrice).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</td>
                 </tr>
               ))}
             </tbody>
@@ -1298,15 +1298,15 @@ export default function Dashboard() {
             <div className="w-64 space-y-2.5 text-[13px] bg-slate-50 p-4 rounded-xl border border-slate-200">
               <div className="flex justify-between text-slate-600">
                 <span>Total HT</span>
-                <span className="font-bold">{selectedOrderDetail.totalAmount.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</span>
+                <span className="font-bold">{selectedOrderDetail.totalAmount.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</span>
               </div>
               <div className="flex justify-between text-slate-600">
                 <span>TVA (20%)</span>
-                <span className="font-bold">{(selectedOrderDetail.totalAmount * 0.2).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</span>
+                <span className="font-bold">{(selectedOrderDetail.totalAmount * 0.2).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</span>
               </div>
               <div className="flex justify-between text-slate-800 font-bold border-t border-slate-300 pt-2 text-[15px]">
                 <span>Total TTC</span>
-                <span>{(selectedOrderDetail.totalAmount * 1.2).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</span>
+                <span>{(selectedOrderDetail.totalAmount * 1.2).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</span>
               </div>
             </div>
           </div>

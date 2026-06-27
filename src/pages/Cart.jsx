@@ -216,9 +216,9 @@ export default function Cart() {
                           </div>
                           
                           <div className="text-right">
-                            <p className="text-[12px] text-outline">Unitaire: {item.price.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</p>
+                            <p className="text-[12px] text-outline">Unitaire: {item.price.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</p>
                             <p className="text-[16px] font-bold text-secondary">
-                              {(item.price * item.quantity).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                              {(item.price * item.quantity).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                             </p>
                           </div>
                         </div>
@@ -284,7 +284,7 @@ export default function Cart() {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center text-[14px] font-medium">
                     <span className="text-on-surface-variant">Sous-total HT</span>
-                    <span className="text-primary">{totalHT.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</span>
+                    <span className="text-primary">{totalHT.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</span>
                   </div>
                   <div className="flex justify-between items-center text-[14px] font-medium">
                     <span className="text-on-surface-variant">Livraison</span>
@@ -292,7 +292,7 @@ export default function Cart() {
                   </div>
                   <div className="flex justify-between items-center text-[14px] font-medium">
                     <span className="text-on-surface-variant">TVA (20%)</span>
-                    <span className="text-primary">{tva.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €</span>
+                    <span className="text-primary">{tva.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs</span>
                   </div>
                   
                   <div className="pt-4 border-t border-outline-variant/30 flex justify-between items-end">
@@ -301,7 +301,7 @@ export default function Cart() {
                       <p className="text-[11px] text-outline italic">Prêt pour SAGE 100</p>
                     </div>
                     <p className="text-[24px] font-black text-secondary">
-                      {totalTTC.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €
+                      {totalTTC.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} Dhs
                     </p>
                   </div>
                 </div>
