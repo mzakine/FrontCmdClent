@@ -873,6 +873,9 @@ export default function Settings() {
                           const col = collaboratorsList.find(c => c.id === u.sageCollaboratorId);
                           roleBadge = 'bg-amber-100 text-amber-800 border border-amber-200';
                           roleLabel = col ? `Commercial (${col.name})` : 'Commercial';
+                        } else if (u.role === 'Director') {
+                          roleBadge = 'bg-teal-100 text-teal-800 border border-teal-200';
+                          roleLabel = 'Direction';
                         }
 
                         return (
@@ -997,6 +1000,9 @@ export default function Settings() {
                       } else if (val === 'Commercial') {
                         setUserCustomerRef('');
                         setUserCollaboratorId(collaboratorsList[0]?.id?.toString() || '');
+                      } else if (val === 'Director') {
+                        setUserCustomerRef('DIR_SAGE');
+                        setUserCollaboratorId('');
                       } else {
                         setUserCustomerRef(clientsList[0]?.ctNum || '');
                       }
@@ -1005,6 +1011,7 @@ export default function Settings() {
                     <option value="Professional">Professionnel (Distributeur)</option>
                     <option value="Individual">Particulier (Comptoir)</option>
                     <option value="Commercial">Commercial (Ventes Sage)</option>
+                    <option value="Director">Direction (Statistiques)</option>
                     <option value="Administrator">Administrateur (ADV)</option>
                   </select>
                 </div>

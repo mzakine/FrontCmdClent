@@ -27,7 +27,7 @@ export default function Layout({ children }) {
 
 
   React.useEffect(() => {
-    if ((user?.role === 'Administrator' || user?.role === 'Commercial') && token) {
+    if ((user?.role === 'Administrator' || user?.role === 'Commercial' || user?.role === 'Director') && token) {
       fetch(`${API_BASE_URL}/Catalog/clients`, {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -193,7 +193,7 @@ export default function Layout({ children }) {
             </div>
             
             <div className="flex items-center gap-4">
-              {(user?.role === 'Administrator' || user?.role === 'Commercial') && (
+              {(user?.role === 'Administrator' || user?.role === 'Commercial' || user?.role === 'Director') && (
                 <div className="relative mr-2" ref={dropdownRef}>
                   <button
                     onClick={() => setIsOpen(!isOpen)}
